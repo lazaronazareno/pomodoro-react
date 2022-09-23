@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-const FormTask = ({setTaskList, taskList}) => {
+const FormTask = ({setTaskList, taskList, counter}) => {
+  const [breakCounter, setBreakCounter] = useState(0)
   const [values, setValues] = useState({
     task:'',
 /*     description:'' */
@@ -13,7 +14,12 @@ const FormTask = ({setTaskList, taskList}) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const newTask = values.task
-    setTaskList([...taskList, newTask, 'Descanso'])
+    if (taskList.length < 6){
+      setBreakCounter(breakCounter + 1)
+      setTaskList([...taskList, newTask, `Break #${breakCounter + 1}`])
+    } else {
+      setTaskList([...taskList, newTask])
+    }
   }
 
   return (

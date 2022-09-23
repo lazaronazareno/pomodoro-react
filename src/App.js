@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import FormTask from './components/form-task';
 import Task from './components/task';
@@ -13,6 +13,8 @@ function App() {
   const [taskList, setTaskList] = useState([])
   const [showForm, setShowForm] = useState(false)
   const [counter, setCounter] = useState(0)
+  const [isBreak, setIsBreak] = useState(false)
+  const [isLast, setIsLast] = useState(false)
 
   const onClick = () => {
     setShowForm(!showForm)
@@ -21,17 +23,23 @@ function App() {
   const handleNextTask = () => {
     if(taskList.length > counter +1) {
       setCounter(counter + 1)
+      setIsBreak(!isBreak)
     }
   }
 
+  useEffect(() => {
+    if(taskList.length > 0){
+      alert('Time over')
+    }
+  }, [counter])
 
   return (
     <div className="App">
-      {taskList.length <= 7 &&
+      {taskList.length < 7 &&
         <>
           <button onClick={onClick}>New Task</button>
           {showForm &&
-            <FormTask setTaskList={setTaskList} taskList={taskList} />
+            <FormTask setTaskList={setTaskList} taskList={taskList} counter={counter} />
           }
         </>
       }
@@ -39,9 +47,15 @@ function App() {
         <>
           <div className='tasks'>
             {taskList.map(task => (
-              <>
-                <Task name={task} configuration={DEFAULT_CONFIGURATION}/>
-              </>
+              <Task name={task}
+               configuration={DEFAULT_CONFIGURATION} 
+               taskList={taskList} 
+               counter={counter}
+               setCounter={setCounter} 
+               isBreak={isBreak}
+               setIsBreak={setIsBreak} 
+               isLast={isLast}
+              />
             ))}
           </div>
           {taskList.length > counter +1 && taskList.length > 1 && (

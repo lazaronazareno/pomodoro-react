@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
-// import { Link } from "react-router-dom";
 
-const Timer = ({START_MINUTES, START_SECOND, START_DURATION}) => {
+const Timer = ({START_MINUTES, START_SECOND, START_DURATION, counter, setCounter, isBreak, setIsBreak}) => {
   const [currentMinutes, setMinutes] = useState(START_MINUTES);
   const [currentSeconds, setSeconds] = useState(START_SECOND);
   const [isStop, setIsStop] = useState(false);
@@ -20,6 +19,8 @@ const Timer = ({START_MINUTES, START_SECOND, START_DURATION}) => {
     setIsRunning(false);
   };
   const resetHandler = () => {
+    setCounter(counter + 1)
+    setIsBreak(!isBreak)
     setMinutes(START_MINUTES);
     setSeconds(START_SECOND);
     setIsRunning(false);
