@@ -61,7 +61,7 @@ const Timer = ({START_MINUTES, START_SECOND, START_DURATION, counter, setCounter
 
   return (
     <>
-      <div className="App">
+      <div>
         <div className="time">
           <h1>{currentMinutes} : {currentSeconds}</h1>
         </div>
