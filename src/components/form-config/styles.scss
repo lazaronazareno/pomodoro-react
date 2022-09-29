@@ -1,41 +1,30 @@
-@import '../../App.scss';
-
 .config-form {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2vh;
-  background-color: #fffffff1;
-  border: 2px solid $yellow-strong;
+  background-color: var(--white);
+  border: 2px solid var(--dark);
   margin: 10vh;
   border-radius: 15px;
   flex-direction: column;
+  width: 70%;
 }
 
 .config-form label {
-  width: 25vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1vh;
+  padding: 2vh;
+  font-size: 3vh;
+  text-align: start;
 }
 
 .config-form label div {
-  width: 10vw;
+  width: 50%;
   display: flex;
   flex-direction: column;
-}
-
-.config-form button {
-  width: 20vh;
-  height: 5vh;
-  font-size: 2vh;
-  border-radius: 15px;
-  background-color: $yellow-light;
-  border: 2px solid $yellow-strong;
-  cursor: pointer;
-  &:hover {
-    background-color: $yellow-strong;
-  }
+  text-align: center;
 }
 
 .config-form input {
@@ -44,7 +33,6 @@
 
 input[type=range] {
   width: 100%;
-  margin: 5px 0;
   background-color: transparent;
   -webkit-appearance: none;
 }
@@ -54,9 +42,8 @@ input[type=range]:focus {
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-  background: rgba(255, 230, 171, 0.78);
-  border: 0px solid rgba(1, 1, 1, 0);
-  border: 0;
+  background: var(--white);
+  border: 2px solid var(--dark);
   border-radius: 5px;
   width: 100%;
   height: 15px;
@@ -64,28 +51,14 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 input[type=range]::-webkit-slider-thumb {
-  margin-top: -5px;
+  margin-top: -7px;
   width: 40px;
   height: 25px;
-  background: #ffd97d;
+  background: var(--dark);
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   cursor: pointer;
   -webkit-appearance: none;
-}
-
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #ffe6ab;
-}
-
-input[type=range]::-moz-range-track {
-  background: rgba(255, 230, 171, 0.78);
-  border: 0px solid rgba(1, 1, 1, 0);
-  border: 0;
-  border-radius: 5px;
-  width: 100%;
-  height: 15px;
-  cursor: pointer;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -95,49 +68,6 @@ input[type=range]::-moz-range-thumb {
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   cursor: pointer;
-}
-
-input[type=range]::-ms-track {
-  background: transparent;
-  border-color: transparent;
-  border-width: 5.9px 0;
-  color: transparent;
-  width: 100%;
-  height: 15px;
-  cursor: pointer;
-}
-
-input[type=range]::-ms-fill-lower {
-  background: #ffe6ab;
-  border: 0px solid rgba(1, 1, 1, 0);
-  border: 0;
-  border-radius: 10px;
-}
-
-input[type=range]::-ms-fill-upper {
-  background: rgba(255, 230, 171, 0.78);
-  border: 0px solid rgba(1, 1, 1, 0);
-  border: 0;
-  border-radius: 10px;
-}
-
-input[type=range]::-ms-thumb {
-  width: 40px;
-  height: 25px;
-  background: #ffd97d;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 0px;
-  /*Needed to keep the Edge thumb centred*/
-}
-
-input[type=range]:focus::-ms-fill-lower {
-  background: rgba(255, 230, 171, 0.78);
-}
-
-input[type=range]:focus::-ms-fill-upper {
-  background: #ffe6ab;
 }
 
 /*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out

@@ -1,0 +1,64 @@
+.base-timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: var(--dark);
+}
+
+.base-timer__path-remaining.orange {
+  color: var(--grey);
+}
+
+.base-timer__path-remaining.red {
+  color: var(--white);
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.base-timer__label h1 {
+  margin: 0;
+  font-size: 10vh;
+}
+
+.timer-button {
+  cursor: pointer;
+  width: 7vh;
+  height: 7vh;
+  margin: 1vh;
+}

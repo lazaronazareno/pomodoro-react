@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { TaskContext } from '../../context/tasklistContext';
 import './styles.scss'
 
-const FormTask = ({setTaskList, taskList, counter, setShowForm, showForm}) => {
+const FormTask = () => {
+  const {taskList, setTaskList} = useContext(TaskContext)
   const [breakCounter, setBreakCounter] = useState(0)
   const [values, setValues] = useState({
     task:'',
-/*     description:'' */
   })
+  const navigate = useNavigate()
 
   const onChange = (e) => {
     setValues({[e.target.name] : e.target.value})
@@ -20,7 +23,7 @@ const FormTask = ({setTaskList, taskList, counter, setShowForm, showForm}) => {
     } else {
       setTaskList([...taskList, newTask])
     }
-    setShowForm(!showForm)
+    navigate('/')
   }
 
   useEffect(() => {
@@ -32,10 +35,7 @@ const FormTask = ({setTaskList, taskList, counter, setShowForm, showForm}) => {
       <label htmlFor='task'>Task
       </label>
       <input required name='task' id='task' onChange={onChange} type='text'/>
-{/*       <label htmlFor='description'>Description
-        <input required name='description' id='description' onChange={onChange} type='text'/>
-      </label> */}
-      <button type='submit'>Submit</button>
+      <button className='menu-button' type='submit'>Submit</button>
     </form>
   )
 }

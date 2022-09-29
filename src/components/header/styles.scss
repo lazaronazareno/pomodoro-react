@@ -1,0 +1,23 @@
+.header {
+  background-color: var(--red-light);
+  display: flex;
+  align-items: center;
+}
+
+.header a:nth-child(1){
+  margin-right: auto;
+}
+
+.header a {
+  text-decoration: none;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  padding: 0vh 1vh;
+}
+
+.header a img {
+  width: 5vh;
+  height: 5vh;
+  padding-right: 1vh;
+}

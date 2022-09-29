@@ -1,28 +1,9 @@
-$red-strong: #EE6055;
-$red-light: #FF9B85;
-$green-strong: #60D394;
-$green-light: #AAF683;
-$yellow-light: #FFE6AB;
-$yellow-strong: #FFD97D;
-
-
 .App {
   text-align: center;
-  background-color: $yellow-light;
+  background-color: var(--yellow-light);
   min-height: 100vh;
+  color: var(--dark);
 }
-
-/* .tasks {
-  width: 100%;
-  height: 90vh;
-  overflow: hidden;
-}
-
-.task-item {
-  width: 100%;
-  height: 90vh;
-}
- */
 
 .form-modal {
   position: absolute;
@@ -33,4 +14,9 @@ $yellow-strong: #FFD97D;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+}
+
+.close {
+  position: absolute;
+  top: 10vh;
 }

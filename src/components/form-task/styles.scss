@@ -1,31 +1,23 @@
-@import '../../App.scss';
-
 .task-form {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10vh;
-  background-color: #fffffff1;
-  border: 2px solid $yellow-strong;
+  background-color: var(--white);
+  border: 2px solid var(--dark);
   margin: 10vh;
-  border-radius: 15px;
+  border-radius: 5px;
   flex-direction: column;
+  width: 70%;
 }
 
 .task-form label {
-  font-size: 2vh;
+  font-size: 5vh;
 }
 
 .task-form input {
-  width: 20vh;
-  height: 2vh;
-  border-radius: 15px;
+  width: 100%;
+  height: 4vh;
+  border-radius: 5px;
   margin: 1vh;
-}
-
-.task-form button {
-  width: 10vh;
-  height: 3vh;
-  border-radius: 15px;
-  background-color: $yellow-strong;
 }

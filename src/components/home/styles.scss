@@ -1,0 +1,83 @@
+.home__first,.home__second, .home__third {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.home__first {
+  flex-direction: column;
+  background-color: var(--red-strong);
+}
+
+.home__first img {
+  width: 50vh;
+  height: 50vh;
+}
+
+.home__first a {
+  text-decoration: none;
+  color: var(--dark);
+  border: 2px solid;
+  padding: 0vh 3vh;
+}
+
+.home__second {
+  background-color: var(--green-light);
+}
+
+.home__second div {
+  padding: 2vh;
+  text-align: center;
+}
+
+.home__second div span {
+  font-size: 3vh;
+}
+
+.home__second img {
+  width: 30vh;
+  height: 30vh;
+}
+
+.home__third {
+  background-color: var(--green-strong);
+  flex-direction: column;
+}
+
+.home__third a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.home__third a:nth-last-of-type(1) {
+  border: 2px solid;
+  padding: 0vh 3vh;
+}
+
+footer {
+  height: 10vh;
+  background-color: var(--yellow-strong);
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+}
+
+footer span {
+  margin-right: auto;
+  padding: 0vh 1vh;
+}
+
+footer a {
+  padding: 0vh 1vh;
+  text-decoration: none;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+}
+
+footer a img {
+  width: 5vh;
+  height: 5vh;
+  padding: 0vh 1vh;
+}

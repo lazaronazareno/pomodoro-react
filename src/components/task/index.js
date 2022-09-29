@@ -24,7 +24,7 @@ const Task = ({name, configuration, taskList, counter, setCounter, isBreak, isLa
           )}
           {!isBreak && !isLast && (
             <div className='task doing'>
-              <h1>Task : {name}</h1>
+              <h1>{name}</h1>
               <Timer
                START_MINUTES={configuration.START_MINUTES} 
                START_SECOND={configuration.START_SECOND} 
@@ -38,7 +38,7 @@ const Task = ({name, configuration, taskList, counter, setCounter, isBreak, isLa
           )}
           {isLast && (
             <div className='task doing'>
-              <h1>Task : {name}</h1>
+              <h1>{name}</h1>
               <Timer
                START_MINUTES={configuration.LAST_MINUTES} 
                START_SECOND={configuration.START_SECOND} 
