@@ -1,14 +1,19 @@
+.form-container {
+  background-color: var(--yellow-light);
+  padding: 2vh;
+  min-height: 85vh;
+}
+
 .task-form {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10vh;
+  padding: 5vh;
   background-color: var(--white);
   border: 2px solid var(--dark);
-  margin: 10vh;
   border-radius: 5px;
   flex-direction: column;
-  width: 70%;
+  margin: 5vh;
 }
 
 .task-form label {
@@ -20,4 +25,23 @@
   height: 4vh;
   border-radius: 5px;
   margin: 1vh;
+  font-size: 3vh;
+}
+
+.task-form__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  border: 2px solid var(--dark);
+  border-radius: 5px;
+  height: 35vh;
+  padding: 2vh;
+  margin: 0vh 5vh;
+}
+
+.task-form__list ul li {
+  padding-bottom: 1vh;
+  font-size: 3vh;
+  text-transform: capitalize;
 }

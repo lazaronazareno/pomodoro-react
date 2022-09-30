@@ -5,13 +5,17 @@
   min-height: 90vh;
 }
 
+h1 {
+  font-size: 4vh;
+}
+
 .home__first {
   flex-direction: column;
   background-color: var(--red-strong);
 }
 
 .home__first img {
-  width: 50vh;
+  width: 48vh;
   height: 50vh;
 }
 
@@ -24,6 +28,7 @@
 
 .home__second {
   background-color: var(--green-light);
+  flex-direction: column-reverse;
 }
 
 .home__second div {
@@ -43,6 +48,8 @@
 .home__third {
   background-color: var(--green-strong);
   flex-direction: column;
+  font-size: 3vh;
+  padding: 0vh 2vh;
 }
 
 .home__third a {

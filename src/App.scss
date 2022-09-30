@@ -1,8 +1,18 @@
+.main {
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
   background-color: var(--yellow-light);
-  min-height: 100vh;
   color: var(--dark);
+}
+
+.tasks-container button {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%, 0px);
 }
 
 .form-modal {

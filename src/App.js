@@ -12,7 +12,7 @@ import Home from './components/home';
 
 function App() {
   return (
-    <main>
+    <main className='main'>
       <TaskListProvider>
         <ConfigProvider>
           <BrowserRouter>

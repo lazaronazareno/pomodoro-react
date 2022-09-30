@@ -1,7 +1,9 @@
 .header {
-  background-color: var(--red-light);
+  background-color: var(--yellow-strong);
   display: flex;
   align-items: center;
+  height: 10vh;
+  border-bottom: 1vh solid;
 }
 
 .header a:nth-child(1){

@@ -1,3 +1,9 @@
+.config-form__container {
+  height: 79vh;
+  background-color: var(--yellow-light);
+  padding: 5vh;
+}
+
 .config-form {
   display: flex;
   justify-content: center;
@@ -5,10 +11,8 @@
   padding: 2vh;
   background-color: var(--white);
   border: 2px solid var(--dark);
-  margin: 10vh;
   border-radius: 15px;
   flex-direction: column;
-  width: 70%;
 }
 
 .config-form label {

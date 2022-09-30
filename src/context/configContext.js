@@ -11,9 +11,7 @@ export const ConfigProvider = ({children}) => {
       BREAK_MINUTES : '5',
       START_DURATION : 10
     });
-    console.log(configuration)
 
-    //put value inside useMemo so that the component only rerenders when there is change in the value
     const value = useMemo(() => ({ configuration, setConfiguration }), [configuration])
 
     return (

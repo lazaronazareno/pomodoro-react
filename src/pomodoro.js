@@ -12,6 +12,8 @@ const Pomodoro = () => {
   const [counter, setCounter] = useState(0)
   const [isBreak, setIsBreak] = useState(false)
   const [isLast, setIsLast] = useState(false)
+  const list = JSON.parse(localStorage.getItem('tasklist'))
+  const [newList, setNewList] = useState(list ? list :[])
 
 
   const handleNextTask = () => {
@@ -32,12 +34,23 @@ const Pomodoro = () => {
     }
   }, [counter, taskList])
 
+  useEffect(() => {
+    const newDate = new Date();
+    const currentDate = newDate.getFullYear()+'/'+(newDate.getMonth()+1)+'/'+newDate.getDate()
+    const filterList = taskList.filter(e => !e.includes('Break'))
+    const obj = {date: currentDate, taskList: filterList}
+    if (list){
+      setNewList([...list, obj])
+      localStorage.setItem('tasklist', JSON.stringify(newList))
+    }
+  }, [isLast])
+
   return (
     <div className="App">
       {taskList && (
         <>
           {taskList.length > 0 &&
-            <>
+            <div className='tasks-container'>
               <div className='tasks'>
                 {taskList.map(task => (
                   <Task name={task}
@@ -53,9 +66,9 @@ const Pomodoro = () => {
                 ))}
               </div>
               {taskList.length > counter +1 && taskList.length > 1 && (
-                <button onClick={handleNextTask}>Next</button>
+                <button className='menu-button' onClick={handleNextTask}>Next</button>
               )}
-            </>
+            </div>
           }
           {isLast && (
             <div>
