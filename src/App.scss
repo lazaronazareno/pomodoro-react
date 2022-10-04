@@ -19,9 +19,22 @@
   z-index: 1;
 }
 
-.close {
-  position: absolute;
-  top: 10vh;
+.over {
+  height: 85vh;
+  padding: 5vh;
+  padding-top: 10vh;
+  background-color: var(--yellow-light);
+}
+
+.over h1 {
+  margin: 0;
+}
+
+.over a {
+  text-decoration: none;
+  color: var(--dark);
+  padding: 0vh 5vh;
+  background-color: var(--yellow-strong);
 }
 
 .next {
@@ -42,4 +55,13 @@
 .next img {
   width: 4vh;
   height: 4vh;
+}
+
+.delete {
+  cursor: pointer;
+  width: 4vh;
+  height: 4vh;
+  position: absolute;
+  bottom: 3vh;
+  right: 3vh;
 }

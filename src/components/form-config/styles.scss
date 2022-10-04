@@ -1,7 +1,8 @@
 .config-form__container {
-  height: 79vh;
+  height: 88vh;
   background-color: var(--yellow-light);
-  padding: 5vh;
+  padding: 2vh;
+  padding-top: 10vh;
 }
 
 .config-form {
@@ -9,8 +10,7 @@
   justify-content: center;
   align-items: center;
   padding: 2vh;
-  background-color: var(--white);
-  border: 2px solid var(--dark);
+  background-color: var(--yellow-strong);
   border-radius: 15px;
   flex-direction: column;
 }

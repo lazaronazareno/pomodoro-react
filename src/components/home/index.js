@@ -30,12 +30,11 @@ const Home = () => {
           <li>Then enjoy a five-minute break.</li>
           <li>After four pomodoros, take a longer, more restorative 15-30 minute break.</li>
         </ul>
-        <a href='https://todoist.com/es/productivity-methods/pomodoro-technique'>Continue Reading...</a>
-        <Link className='menu-button' to='/pomodoro'>Try it!</Link>
+        <a className='menu-button' href='https://todoist.com/es/productivity-methods/pomodoro-technique'>Continue Reading...</a>
       </div>
       <footer>
         <span>Pomodoro App</span>
-        <a href='https://github.com/lazaronazareno'>
+        <a href='https://github.com/lazaronazareno/pomodoro-react'>
           <img src={github} alt='Github' />
           <span>Github</span>
         </a>

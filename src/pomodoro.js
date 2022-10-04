@@ -5,10 +5,11 @@ import { ConfigContext } from './context/configContext';
 import { TaskContext } from './context/tasklistContext';
 import sound1 from './utils/sound/sound1.wav'
 import next from './utils/icon/next.png'
+import trash from './utils/icon/trash-can.png'
 import './App.scss';
 
 const Pomodoro = () => {
-  const {taskList} = useContext(TaskContext)
+  const {taskList, setTaskList} = useContext(TaskContext)
   const {configuration} = useContext(ConfigContext)
   const [counter, setCounter] = useState(0)
   const [isBreak, setIsBreak] = useState(false)
@@ -22,6 +23,10 @@ const Pomodoro = () => {
       setCounter(counter + 1)
       setIsBreak(!isBreak)
     }
+  }
+
+  const handleDelete = () => {
+    setTaskList([])
   }
 
   useEffect(() => {
@@ -43,7 +48,11 @@ const Pomodoro = () => {
     if (list){
       setNewList([...list, obj])
       localStorage.setItem('tasklist', JSON.stringify(newList))
+    } else {
+      setNewList([...newList, obj])
+      localStorage.setItem('tasklist', JSON.stringify(newList))
     }
+    console.log('useeffect is last',taskList)
   }, [isLast])
 
   return (
@@ -71,15 +80,31 @@ const Pomodoro = () => {
                   <img src={next} alt="Next icons created by Freepik - Flaticon"/>
                 </div>
               )}
+              <img className='delete' onClick={handleDelete} src={trash} alt='Trash icons created by Freepik - Flaticon' />
             </div>
           }
           {isLast && (
-            <div>
+            <div className='over'>
               <h1>Pomodoro Over!</h1>
-              <Link to='/history'>go to history</Link>
+              <Link className='menu-button' to='/history'>History</Link>
             </div>
           )}
         </>
+      )}
+      {taskList.length === 0 && (
+        <div className='tasks-container'>
+          <div className='tasks'>
+            <Task name='test'
+              configuration={configuration} 
+              taskList={taskList} 
+              counter={counter}
+              setCounter={setCounter} 
+              isBreak={isBreak}
+              setIsBreak={setIsBreak} 
+              isLast={isLast}
+            />
+          </div>
+        </div>
       )}
     </div>
   );
