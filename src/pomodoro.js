@@ -4,6 +4,7 @@ import Task from './components/task';
 import { ConfigContext } from './context/configContext';
 import { TaskContext } from './context/tasklistContext';
 import sound1 from './utils/sound/sound1.wav'
+import next from './utils/icon/next.png'
 import './App.scss';
 
 const Pomodoro = () => {
@@ -66,7 +67,9 @@ const Pomodoro = () => {
                 ))}
               </div>
               {taskList.length > counter +1 && taskList.length > 1 && (
-                <button className='menu-button' onClick={handleNextTask}>Next</button>
+                <div className='next' onClick={handleNextTask}>
+                  <img src={next} alt="Next icons created by Freepik - Flaticon"/>
+                </div>
               )}
             </div>
           }

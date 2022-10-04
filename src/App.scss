@@ -8,13 +8,6 @@
   color: var(--dark);
 }
 
-.tasks-container button {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  transform: translate(50%, 0px);
-}
-
 .form-modal {
   position: absolute;
   display: flex;
@@ -29,4 +22,24 @@
 .close {
   position: absolute;
   top: 10vh;
+}
+
+.next {
+  position: absolute;
+  bottom: 20%;
+  right: 50%;
+  transform: translate(50%, 0px);
+  cursor: pointer;
+  background-color: var(--red-light);
+  width: 8vh;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vh;
+}
+
+.next img {
+  width: 4vh;
+  height: 4vh;
 }

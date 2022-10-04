@@ -1,11 +1,19 @@
 .base-timer {
   position: relative;
   width: 300px;
-  height: 300px;
 }
 
 .base-timer__svg {
   transform: scaleX(-1);
+  border-radius: 150px;
+}
+
+.bg-green {
+  background-color: var(--green-light);
+}
+
+.bg-red {
+  background-color: var(--red-light);
 }
 
 .base-timer__circle {
@@ -51,14 +59,30 @@
   justify-content: center;
 }
 
-.base-timer__label h1 {
+.base-timer__label span {
   margin: 0;
-  font-size: 10vh;
+  font-size: 8vh;
+  font-weight: bolder;
+}
+
+.timer-button__container {
+  min-width: 300px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .timer-button {
   cursor: pointer;
-  width: 7vh;
-  height: 7vh;
   margin: 1vh;
+  width: 8vh;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vh;
+}
+
+.timer-button img {
+  width: 4vh;
+  height: 4vh;
 }

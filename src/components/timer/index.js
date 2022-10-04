@@ -124,7 +124,7 @@ const Timer = ({START_MINUTES, START_SECOND, START_DURATION, counter, setCounter
     <>
       <div>
         <div className="base-timer">
-          <svg className="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <svg className={`base-timer__svg ${isBreak ? 'bg-green' : 'bg-red'}`} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <g className="base-timer__circle">
               <circle className="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
               <path
@@ -141,21 +141,29 @@ const Timer = ({START_MINUTES, START_SECOND, START_DURATION, counter, setCounter
             </g>
           </svg>
           <div id="base-timer-label" className="base-timer__label">
-            <h1>{currentMinutes} : {currentSeconds}</h1>
-            <div>
+            <span>{currentMinutes} : {currentSeconds}</span>
+          </div>
+            <div className='timer-button__container'>
               {!isRunning && !isStop && (
-                <img className='timer-button' onClick={startHandler} src={play} alt='Play iconos creados por Freepik - Flaticon' />
+                <div className={`timer-button ${isBreak ? 'bg-green' : 'bg-red'}`}>
+                  <img onClick={startHandler} src={play} alt='Play icons created by Freepik - Flaticon' />
+                </div>
               )}
               {isRunning && (
-                <img className='timer-button' onClick={stopHandler} src={pause} alt='Pause iconos creados por Freepik - Flaticon' />
+                <div className={`timer-button ${isBreak ? 'bg-green' : 'bg-red'}`}>
+                  <img onClick={stopHandler} src={pause} alt='Pause icons created by inkubators - Flaticon' />
+                </div>
               )}
 
               {isStop && (
-                <img className='timer-button' onClick={resumeHandler} src={play} alt='Play iconos creados por Freepik - Flaticon' />
+                <div className={`timer-button ${isBreak ? 'bg-green' : 'bg-red'}`}>
+                  <img onClick={resumeHandler} src={play} alt='Play iconos creados por Freepik - Flaticon' />
+                </div>
               )}
-              <img className='timer-button' onClick={resetHandler} disabled={!isRunning && !isStop} src={stop} alt='Stop iconos creados por Freepik - Flaticon' />
+              <div className={`timer-button ${isBreak ? 'bg-green' : 'bg-red'}`}>
+                <img onClick={resetHandler} disabled={!isRunning && !isStop} src={stop} alt='Stop icons created by Pixel perfect - Flaticon' />
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </>

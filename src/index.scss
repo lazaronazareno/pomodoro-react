@@ -44,7 +44,7 @@ code {
   }
 
   &:not(:disabled):hover:active {
-    transform: scale(1.05) translateY(.125rem);
+    transform: scale(1.05);
   }
 
   &:focus {
@@ -69,7 +69,4 @@ code {
     border-width: 0;
   }
   
-  &:not(:disabled):active {
-    transform: translateY(.125rem);
-  }
 }

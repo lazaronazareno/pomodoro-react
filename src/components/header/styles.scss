@@ -1,13 +1,12 @@
 .header {
-  background-color: var(--yellow-strong);
   display: flex;
+  position: absolute;
   align-items: center;
+  justify-content: space-evenly;
   height: 10vh;
-  border-bottom: 1vh solid;
-}
-
-.header a:nth-child(1){
-  margin-right: auto;
+  width: 100%;
+  top: 0;
+  z-index: 2;
 }
 
 .header a {
